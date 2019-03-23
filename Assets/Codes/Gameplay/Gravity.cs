@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
+    public GameObject center;
+    public float force;
+    Rigidbody rdb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rdb = GetComponent<Rigidbody>();
+        rdb.AddForce(Vector3.forward * 50);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        Vector3 dir = center.transform.position- transform.position ;
+        rdb.AddForce(dir.normalized * (force));
     }
 }
