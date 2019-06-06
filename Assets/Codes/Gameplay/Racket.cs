@@ -35,7 +35,7 @@ public class Racket : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        collision.rigidbody.velocity = Vector3.zero;
-        collision.rigidbody.AddForce((transform.right+transform.forward) *200);
+       // collision.rigidbody.velocity = Vector3.zero;
+       // collision.rigidbody.AddForce((-transform.right+transform.forward) *200);
     }
 }

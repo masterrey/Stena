@@ -17,7 +17,11 @@ public class Gravity : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 dir = center.transform.position- transform.position ;
-        rdb.AddForce(dir.normalized * (force));
+        if (center)
+        {
+            Vector3 dir = center.transform.position - transform.position;
+            rdb.AddForce(dir.normalized * (force));
+        }
+        rdb.velocity = rdb.velocity.normalized * 6.2f;
     }
 }
